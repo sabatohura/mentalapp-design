@@ -84,7 +84,29 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: 20,
+              ),
+
+              // how do we feel section
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "How do you Feel",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Icon(
+                    Icons.more_horiz,
+                    color: Colors.white,
+                  )
+                ],
+              ),
             ],
           ),
         ),
