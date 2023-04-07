@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:mentalapp/pages/utils/emoticon_face.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -107,6 +108,76 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
+              SizedBox(
+                height: 20,
+              ),
+              //emoticons sections
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  //bad
+                  Column(
+                    children: [
+                      EmoticonFace(
+                        emoticonFace: '😩',
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'Bad',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                  // fine
+                  Column(
+                    children: [
+                      EmoticonFace(
+                        emoticonFace: '🙂',
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'Fine',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                  // well
+                  Column(
+                    children: [
+                      EmoticonFace(
+                        emoticonFace: '😃',
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'Well',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                  // excellent
+                  Column(
+                    children: [
+                      EmoticonFace(
+                        emoticonFace: '🥳',
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'Excellent',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                ],
+              )
             ],
           ),
         ),
