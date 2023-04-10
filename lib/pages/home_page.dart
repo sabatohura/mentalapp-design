@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:mentalapp/pages/utils/emoticon_face.dart';
+import 'package:mentalapp/pages/utils/exercise_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,7 +31,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             // greetings section
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.fromLTRB(25, 25, 25, 10),
               child: Column(
                 children: [
                   Row(
@@ -187,17 +188,17 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-
-                  SizedBox(
-                    height: 12,
-                  ),
                 ],
               ),
             ),
             Expanded(
                 child: Container(
-              padding: EdgeInsets.all(25),
-              color: Colors.grey[100],
+              decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40))),
+              padding: EdgeInsets.fromLTRB(25, 35, 25, 0),
               child: Center(
                 child: Column(
                   children: [
@@ -212,31 +213,41 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Icon(Icons.more_horiz)
                       ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    // exercises list views
+                    Expanded(
+                      child: ListView(
+                        children: [
+                          ExerciseTile(
+                              icon: (Icons.favorite),
+                              exerciseName: 'Speaking Skills',
+                              numberOfExercises: '15',
+                              exColor: Colors.orange),
+                          ExerciseTile(
+                              icon: (Icons.person),
+                              exerciseName: 'Reading Skills',
+                              numberOfExercises: '8',
+                              exColor: Colors.blue[600]),
+                          ExerciseTile(
+                              icon: (Icons.star),
+                              exerciseName: 'Writing Skills',
+                              numberOfExercises: '20',
+                              exColor: Colors.redAccent),
+                          ExerciseTile(
+                              icon: (Icons.movie),
+                              exerciseName: 'Movie Telling',
+                              numberOfExercises: '10',
+                              exColor: Colors.green),
+                        ],
+                      ),
                     )
                   ],
                 ),
               ),
             ))
-            // Expanded(
-            //   child: ClipRRect(
-            //     borderRadius: BorderRadius.only(
-            //         topLeft: Radius.circular(50),
-            //         topRight: Radius.circular(50)),
-            //     child: Container(
-            //       decoration: BoxDecoration(color: Colors.white, boxShadow: [
-            //         BoxShadow(
-            //           color: Colors.grey,
-            //           blurRadius: 15.0, // soften the shadow
-            //           spreadRadius: 5.0, //extend the shadow
-            //           offset: Offset(
-            //             5.0, // Move to right 5  horizontally
-            //             5.0, // Move to bottom 5 Vertically
-            //           ),
-            //         )
-            //       ]),
-            //     ),
-            //   ),
-            // )
           ],
         ),
       ),
